@@ -1,0 +1,7 @@
+---
+# This variables file used by the playbooks in the dbservers group.
+mysqldservice: mysqld
+mysql_port: 3306
+dbuser: admin
+dbpass: flzx3qC
+dbname: testdb

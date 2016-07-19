@@ -1,0 +1,3 @@
+---
+- name: restart firewall
+  shell: echo "[roles/web/handlers] restart firewall" >> /tmp/1.log

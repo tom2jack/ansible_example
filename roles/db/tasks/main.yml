@@ -1,0 +1,24 @@
+---
+# This playbooks used for the dbservers group.
+- name: db_tasks[1] MySQL installation
+  shell: echo "[roles/db/tasks] db_tasks[1] MySQL installation" >> /tmp/1.log
+
+- name: db_tasks[2] Configure SELinux for MySQL 
+  shell: echo "[roles/db/tasks] db_tasks[2] Configure SELinux for MySQL" >> /tmp/1.log
+
+- name: db_tasks[3] Create MySQL configuration 
+  template: src=my.cnf.j2 dest=/tmp/my.cnf
+  notify: restart MySQL
+
+- name: db_tasks[4] Start MySQL instance 
+  shell: echo "[roles/db/tasks] db_tasks[4] Start MySQL instance" >> /tmp/1.log
+
+- name: db_tasks[5] Configure firewall for MySQL
+  shell: echo "[roles/db/tasks] db_tasks[5] Configure firewall for MySQL" >> /tmp/1.log
+  notify: restart firewall
+
+- name: db_tasks[6] Create Application Database
+  shell: echo "[roles/db/tasks] db_tasks[6] Create Application Database" >> /tmp/1.log
+
+- name: db_tasks[7] Create Application DB User
+  shell: echo "[roles/db/tasks] db_tasks[7] Create Application DB User" >> /tmp/1.log

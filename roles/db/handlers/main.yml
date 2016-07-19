@@ -1,0 +1,7 @@
+---
+#
+- name: restart MySQL
+  shell: echo "[roles/db/handlers] restart MySQL" >> /tmp/1.log
+
+- name: restart firewall
+  shell: echo "[roles/db/handlers] restart firewall" >> /tmp/1.log

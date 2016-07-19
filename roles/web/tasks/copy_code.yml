@@ -1,0 +1,7 @@
+---
+- name: cope file from repository
+  #git: repo={{ repository }} dest=/var/www/html/
+  shell: echo "[roles/web/tasks] git clone from {{ repository }} to /var/www/html/" >> /tmp/1.log
+
+- name: configure index.php file 
+  template: src=index.php.j2 dest=/tmp/index.php

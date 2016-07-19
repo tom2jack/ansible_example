@@ -1,0 +1,12 @@
+---
+# This playbooks contains common plays that will run on all nodes.
+- name: common_tasks setup step 1
+  shell: echo "[roles/common/tasks] 1" >> /tmp/1.log
+
+- name: common_tasks setup step 2
+#  shell: echo "[roles/common/tasks] 2" >> /tmp/1.log
+  template: src=test.conf.j2 dest=/tmp/test.conf
+  notify: common_handlers setup step 1
+
+- name: common_tasks setup step 3
+  shell: echo "[roles/common/tasks] 3" >> /tmp/1.log

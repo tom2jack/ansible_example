@@ -1,0 +1,7 @@
+---
+#
+- name: common_handlers setup step 1
+  shell: echo "[roles/common/handlers] 1" >> /tmp/1.log
+
+- name: common_handlers setup step 2
+  shell: echo "[roles/common/handlers] 2" >> /tmp/1.log

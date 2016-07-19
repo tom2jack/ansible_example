@@ -1,0 +1,22 @@
+---
+# This a test
+- name: setup common init
+  hosts: all
+  remote_user: root
+
+  roles:
+    - common
+
+- name: setup web init
+  hosts: webservers
+  remote_user: root
+
+  roles:
+    - web
+
+- name: setup dbservers init
+  hosts: dbservers
+  remote_user: root
+
+  roles:
+    - db

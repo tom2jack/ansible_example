@@ -1,0 +1,14 @@
+---
+- name: Install nginx and php etc
+  shell: echo "[roles/web/tasks] install nginx and php etc" >> /tmp/1.log
+
+- name: Configure firewall for httpd
+  shell: echo "[roles/web/tasks] configure firewall for httpd" >> /tmp/1.log
+  notify: restart firewall
+
+- name: Start httpd
+  shell: echo "[roles/web/tasks] start httpd" >> /tmp/1.log
+
+- name: Configure SELinux for httpd
+  shell: echo "[roles/web/tasks] configure SELinux for httpd" >> /tmp/1.log
+  
